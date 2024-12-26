@@ -181,7 +181,7 @@ def programa_factura(db_datos, db_contrato, mes_inicio, mes_final, año):
     # Concatenar todas las facturas en un solo DataFrame
     facturas_completas = pd.concat(facturas_totales, ignore_index=True)
     return facturas_completas
-#----------------------------------- Fin funciones ---------------------------------------------------------------------#
+#---------------------------------------------------- Fin funciones ----------------------------------------------------#
 
 #-------------------------------------------------------Programa Principal ---------------------------------------------#
 print("Bienvenid@ al programa donde podrás generar la factura de comisiones para el mes de julio y agosto del 2024")
@@ -192,32 +192,32 @@ factura_final = programa_factura(db_completa, db_contratos, 7, 8, 2024)
 valores_unicos = factura_final['Fecha-Mes'].unique()
 # Convertir la lista de valores en un string, separados por comas
 valores_como_string = ", ".join(map(str, valores_unicos))
-# Definir la ruta de destino (directorio actual)
+# Ruta de destino (Carpeta actual)
 nombre_archivo = f"Facturas_{valores_como_string}.xlsx"
 ruta_completa = os.path.join(os.getcwd(), nombre_archivo)  # Guardar en el directorio actual
 # Guardar las facturas en el archivo Excel en la ruta especificada
 factura_final.to_excel(ruta_completa, index=False)
 print(f"Archivo de facturas guardado como {ruta_completa}")
 
-#--------------Parte de envio -----------------------------------------------
+#---------------------------------------Envió de la factura a los destinarios -----------------------------------------------#
 
 # Pedir al usuario el número de destinatarios
 num_destinatarios = int(input("¿A cuántos destinatarios deseas enviarles el correo? (Escribe un número): "))
 
-# Recopilar los correos electrónicos
+# Recopilación de los correos electrónicos
 correos_destino = []
 for i in range(num_destinatarios):
     correo = input(f"Ingrese el correo del destinatario {i + 1}: ")
     correos_destino.append(correo)
 
-# Unir los correos con "; " (Outlook requiere este formato para múltiples destinatarios)
+# Unión de los correos con "; " (Outlook requiere este formato para múltiples destinatarios)
 correos_destino_str = "; ".join(correos_destino)
 
-# Configurar el cliente de Outlook
+# Configuración del cliente de Outlook
 outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)
 
-# Configurar el contenido del correo
+# Configuración del contenido del correo
 mail.To = correos_destino_str
 mail.Subject = f"Facturas de {valores_como_string}"
 mail.Body = (
