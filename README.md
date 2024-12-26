@@ -1,4 +1,4 @@
-<h1>Programa de generación de facturas de comisiones.</h1>
+<h1>Programa de generación de facturas de comisiones </h1>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -80,7 +80,7 @@ Realizar las siguientes instalaciones necesarias.
 ```sh
    python 00_CREACION_TABLA_CONTRATOS.py
 ```
-<p>Después ejecutar le siguiente comando: </p>
+<p>Después ejecutar el siguiente comando: </p>
 
 ```sh
    python 02_AUTOMATIZACION.py
