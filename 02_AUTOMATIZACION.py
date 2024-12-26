@@ -4,6 +4,7 @@ import pandas as pd
 import os 
 import win32com.client as win32
 
+
 #------------------ Conexión a base de datos y su respectiva obtención -----------------------#
 # Función para obtener tablas y sus datos
 def obtener_tablas_y_datos(conn):
@@ -201,7 +202,7 @@ print(f"Archivo de facturas guardado como {ruta_completa}")
 #--------------Parte de envio -----------------------------------------------
 
 # Pedir al usuario el número de destinatarios
-num_destinatarios = int(input("¿A cuántos destinatarios deseas enviarles el correo? (Escribe un número)"))
+num_destinatarios = int(input("¿A cuántos destinatarios deseas enviarles el correo? (Escribe un número): "))
 
 # Recopilar los correos electrónicos
 correos_destino = []
