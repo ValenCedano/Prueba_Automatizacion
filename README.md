@@ -62,7 +62,7 @@ Realizar las siguientes instalaciones necesarias.
    ```sh
    https://github.com/ValenCedano/Prueba_Automatizacion.git
    ```
-2. Abrir la terminal del sistema operativo e ingresar a la dirrección de la carpeta del repositorio
+2. Abrir la terminal del sistema operativo en modo administrador e ingresar a la dirrección de la carpeta del repositorio
    ```sh
     C:\Users\valen\Documentos\Valentina work\Prueba_Automatizacion (Ejemplo)
    ```
